@@ -17,12 +17,17 @@ public class TimeRestRouterController {
 		// editar 
 	}
 	
-	@RequestMapping(value = "/time/getTime", method = RequestMethod.GET)
+	@RequestMapping(value = "/time/getTime{idTime}", method = RequestMethod.GET)
 	public void getTime(){
 		// recuperar 
 	}
 	
-	@RequestMapping(value = "/time/removeTime/{idAtleta}", method = RequestMethod.GET)
+	@RequestMapping(value = "/time/getTimes", method = RequestMethod.GET)
+	public void getTimes(){
+		
+	}
+	
+	@RequestMapping(value = "/time/removeTime/{idTime}", method = RequestMethod.GET)
 	public void removeTime(@PathVariable int idTime){
 		// editar 
 	}
