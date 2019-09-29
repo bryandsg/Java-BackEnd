@@ -1,5 +1,6 @@
 package com.backend.springboot.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import com.backend.springboot.model.Atleta;
@@ -7,7 +8,7 @@ import com.backend.springboot.model.Atleta;
 public interface AtletaInterface {
 
 	Optional<Atleta> getAtletaById(Integer id);
-	
+	public List<Atleta> getAtletas();
 	public void deleteAtleta(Integer id);
 	public void deleteTodosAtletas();
 	public void updateAtletaById(Integer id, Atleta novoAtleta);
