@@ -44,7 +44,7 @@ public class AtletaService implements AtletaInterface {
 		getAtleta.get().setPosicao(novoAtleta.getPosicao());
 		getAtleta.get().setModalidade(novoAtleta.getModalidade());
 		getAtleta.get().setIdade(novoAtleta.getIdade());
-		
+		atletaRepository.save(getAtleta.get());
 	}
 
 	@Override

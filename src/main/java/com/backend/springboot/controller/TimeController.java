@@ -1,5 +1,5 @@
-//package com.backend.springboot.controller;
-//
-//public class TimeController {
-//
-//}
+package com.backend.springboot.controller;
+
+public class TimeController {
+
+}

@@ -1,11 +1,13 @@
 package com.backend.springboot.model;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Time {
@@ -14,7 +16,9 @@ public class Time {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer idTime;
 	private String nomeTime;
-	private List<Atleta> listaAtletas;
+	
+	@OneToMany(mappedBy = "time")
+	private Set<Atleta> listaAtletas;
 	
 	public Integer getIdTime() {
 		return idTime;
@@ -28,7 +32,7 @@ public class Time {
 	public void setNomeTime(String nomeTime) {
 		this.nomeTime = nomeTime;
 	}
-	public List<Atleta> getListaAtletas() {
+	public Set<Atleta> getListaAtletas() {
 		return listaAtletas;
 	}
 	 public void addAtleta(Atleta atletaP){

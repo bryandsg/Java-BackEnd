@@ -21,20 +21,21 @@ public class AtletaRestRouterController {
 	
 	
 	@RequestMapping(value = "/atleta/createAtleta", method = RequestMethod.POST)
-	public String createAtleta(@RequestBody Atleta novoAtleta){
+	public void createAtleta(@RequestBody Atleta novoAtleta){
 		atletaService.insertAtleta(novoAtleta);
-		return "ATLETA CRIADO";
+		
 	}
 	
 	@RequestMapping(value = "/atleta/editeAtleta/{idAtleta}", method = RequestMethod.POST)
-	public String editAtleta(@PathVariable("idAtleta") int idAtleta, @RequestBody Atleta novoAtleta){
+	public void editAtleta(@PathVariable("idAtleta") int idAtleta, @RequestBody Atleta novoAtleta){
+		
 		
 		atletaService.updateAtletaById(idAtleta, novoAtleta);
-		return "ATLETA EDITADO COM SUCESSO";
+		
 	}
 	
 	//recupera um atleta específico
-	@RequestMapping(value = "/atleta/getAtleta{idAtleta}", method = RequestMethod.GET)
+	@RequestMapping(value = "/atleta/getAtleta/{idAtleta}", method = RequestMethod.GET)
 	public Optional<Atleta> getAtleta(@PathVariable int idAtleta){
 		
 		return atletaService.getAtletaById(idAtleta);
@@ -47,9 +48,9 @@ public class AtletaRestRouterController {
  	
 	//remove um atleta específico
 	@RequestMapping(value = "/atleta/removeAtleta/{idAtleta}", method = RequestMethod.GET)
-	public String removeAtleta(@PathVariable int idAtleta){
+	public void removeAtleta(@PathVariable int idAtleta){
 		atletaService.deleteAtleta(idAtleta);
-		return "deletado: ATLETA"+idAtleta;
+		
 	}
 	
 	
